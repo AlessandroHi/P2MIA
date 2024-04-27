@@ -1,0 +1,70 @@
+.vertical-nav {
+    background-color: #333;
+    width: 320px; /* Ancho del nav vertical */
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    height: 860px;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+
+  }
+  
+  .nav-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+ 
+  }
+  
+  .nav-item {
+    margin-bottom: 5px; /* Espacio entre elementos de lista */
+  }
+  
+  .nav-link {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center; 
+    border-radius: 15px;
+    
+  }
+  
+  .nav-link:hover {
+    background-color: #555; /* Color de fondo al pasar el mouse */
+  }
+  
+
+
+  /* AREA DE COMNADO  */
+  .command-console-container {
+    position: absolute;
+    top: 15%;
+    left: 32%;
+    transform: translate(-50%, -50%);
+    height: 50px;
+
+  }
+  
+  .command-console {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    width: 350%;
+    height: 1350%;
+  }
+  
+  .output-area {
+    width: 100%;
+  }
+  
+  .input-area {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    
+  }
+  
