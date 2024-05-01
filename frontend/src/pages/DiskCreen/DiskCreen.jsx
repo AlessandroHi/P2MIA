@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import VerticalNav from '../../navigation/VerticalNav'
 
-export default function DiskCreen({ip="localhost"}) {
+export default function DiskCreen({ip}) {
   const [data, setData] = useState([]) 
   const navigate = useNavigate()
   

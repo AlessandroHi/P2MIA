@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import "../../App.css"; 
 
-export default function ComandConsole({ip="localhost"}) {
+export default function ComandConsole({ip}) {
   const { id } = useParams()
   const [inputValue, setInputValue] = useState("");
   const [outputValue, setOutputValue] = useState("");
@@ -13,12 +13,14 @@ export default function ComandConsole({ip="localhost"}) {
 
   const handleEnterPress = (event) => {
     if (event.key === "Enter") {
-      executeCommand();
+      console.log(`http://${ip}:4000/comand`)
+      executeCommand();   
     }
   };
-
+  
   const executeCommand = () => {
     const command = inputValue.trim();
+    console.log("IP antes de la solicitud:", ip); // Verificar la IP antes de la solicitud
     fetch(`http://${ip}:4000/comand`, {
       method: "POST",
       headers: {
@@ -43,10 +45,9 @@ export default function ComandConsole({ip="localhost"}) {
         console.error("Error:", error);
         setOutputValue("Error al procesar la solicitud");
       });
-
+  
     setInputValue("");
   };
-
   return (
     <div className="command-console-container">
       <div className="command-console">

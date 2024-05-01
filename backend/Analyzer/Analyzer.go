@@ -398,3 +398,34 @@ func fn_execute(input string) {
 		fmt.Println("Hubo un error:", err)
 	}
 }
+
+func fn_rep(params string) {
+	fs := flag.NewFlagSet("rep", flag.ExitOnError)
+	name := fs.String("name", "", "name")
+	path := fs.String("path", "", "path")
+	id := fs.String("id", "", "id")
+
+	// Parse the flags
+	fs.Parse(os.Args[1:])
+
+	// find the flags in the input
+	matches := re.FindAllStringSubmatch(params, -1)
+
+	// Process the input
+	for _, match := range matches {
+		flagName := match[1]
+		flagValue := strings.ToLower(match[2])
+
+		flagValue = strings.Trim(flagValue, "\"")
+
+		switch flagName {
+		case "name, path, id":
+			fs.Set(flagName, flagValue)
+		default:
+			fmt.Println("Error: Flag not found")
+		}
+	}
+
+	DiskManagement.Rep(*name, *path, *id)
+
+}

@@ -569,3 +569,54 @@ func Unmount(id string) {
 
 	fmt.Println("======End UNMOUNT======")
 }
+
+func Rep(name string, path string, id string) {
+
+	Prints.Prints = append(Prints.Prints, "\n======Start REP======")
+	Prints.Prints = append(Prints.Prints, "Name: "+name)
+	Prints.Prints = append(Prints.Prints, "path: "+path)
+	Prints.Prints = append(Prints.Prints, "id: "+id)
+	// Open bin file
+	filepath := "./MIA/" + strings.ToUpper(string(id[0])) + ".disk"
+	file, err := Utilities.OpenFile(filepath)
+	if err != nil {
+		return
+	}
+	defer file.Close()
+
+	var TempMBR Structs.MBR
+	// Read object from bin file
+	if err := Utilities.ReadObject(file, &TempMBR, 0); err != nil {
+		return
+	}
+
+	var totalSize int32
+
+	// Iterate over the partitions
+	for i := 0; i < 4; i++ {
+		if TempMBR.Partitions[i].Size != 0 {
+			totalSize += TempMBR.Partitions[i].Size
+		}
+	}
+
+	var freezise int32
+	freezise = TempMBR.MbrSize - totalSize
+
+	Prints.Prints = append(Prints.Prints, "Total Partition Size: "+strconv.FormatInt(int64(int(freezise)), 10))
+
+	Prints.Prints = append(Prints.Prints, "======End REP======")
+}
+
+func reporDisk(free string) string {
+	graph := `
+	digraph D {
+	    subgraph cluster_0 {
+	        bgcolor="#3731f4"
+	        node [style="rounded" style=filled];
+	       
+	        node_A [shape=record label="MBR|Libre\n` + free + `|{PRIMARIA|{EBR|}}|PArticion"];
+	    }
+	}`
+
+	return graph
+}

@@ -165,6 +165,8 @@ func main() {
 
 	router.HandleFunc("/partition", postMethoPartition).Methods("POST") //PARTITION
 
+	// router.HandleFunc("/login", postMethoPartition).Methods("POST") //login
+
 	handler := cors.Default().Handler(router)
 	log.Fatal(http.ListenAndServe(":4000", handler))
 }
