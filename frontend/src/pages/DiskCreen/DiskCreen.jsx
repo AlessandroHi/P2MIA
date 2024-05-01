@@ -10,11 +10,6 @@ export default function DiskCreen({ip="localhost"}) {
   // execute the fetch command only once and when the component is loaded
   useState(() => {
  
-    // const rawData = {
-    //   "rutas":["A.dsk","B.dsk","C.dsk","D.dsk","A.dsk","B.dsk","C.dsk","D.dsk","A.dsk","B.dsk","C.dsk","D.dsk"]
-    // }
-    // setData(rawData.rutas)
-
     var dataF = {
       User: 'root',
       Password: 'admin'
@@ -56,6 +51,7 @@ export default function DiskCreen({ip="localhost"}) {
        borderRadius: "15px",
        height: "80%",
        width: "75%",
+       textAlign: "center"
 
        }}>
 
@@ -64,15 +60,14 @@ export default function DiskCreen({ip="localhost"}) {
             return (
               <div key={index} style={{
                 display: "flex",
-                flexDirection: "column", // Alinea los elementos en columnas
-                alignItems: "center", // Centra verticalmente los elementos
+                flexDirection: "column", 
                 maxWidth: "100px",
                 marginTop: "10px",
                 height: "20px"
               }}
               onClick={() => onClick(objIterable)}
               >
-                <img src={diskIMG} alt="disk" style={{width: "100px"}} />
+                <img src={diskIMG} alt="disk" style={{width: "100px",  textAlign: "center"}} />
                 <p>{objIterable}</p>
               </div>
             )

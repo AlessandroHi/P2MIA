@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import "../../App.css"; 
 
-export default function ComandConsole() {
+export default function ComandConsole({ip="localhost"}) {
+  const { id } = useParams()
   const [inputValue, setInputValue] = useState("");
   const [outputValue, setOutputValue] = useState("");
 
@@ -17,11 +19,31 @@ export default function ComandConsole() {
 
   const executeCommand = () => {
     const command = inputValue.trim();
-    if (command === "clear") {
-      setOutputValue("");
-    } else {
-      setOutputValue(outputValue + "> " + command + "\n");
-    }
+    fetch(`http://${ip}:4000/comand`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ User: command }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        if (Array.isArray(data)) {
+          setOutputValue(data.join("\n"));
+        } else {
+          setOutputValue(data.Value);
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        setOutputValue("Error al procesar la solicitud");
+      });
+
     setInputValue("");
   };
 

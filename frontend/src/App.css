@@ -1,70 +1,159 @@
 .vertical-nav {
-    background-color: #333;
-    width: 320px; /* Ancho del nav vertical */
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    height: 860px;
-    transform: translate(-50%, -50%);
-    border-radius: 15px;
+  background-color: #333;
+  width: 320px; /* Ancho del nav vertical */
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  height: 860px;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
 
-  }
+}
+
+.nav-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+}
+
+.nav-item {
+  margin-bottom: 5px; /* Espacio entre elementos de lista */
+}
+
+.nav-link {
+  display: block;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+  text-align: center; 
+  border-radius: 15px;
   
-  .nav-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
- 
-  }
-  
-  .nav-item {
-    margin-bottom: 5px; /* Espacio entre elementos de lista */
-  }
-  
-  .nav-link {
-    display: block;
-    padding: 10px;
-    color: #fff;
-    text-decoration: none;
-    text-align: center; 
-    border-radius: 15px;
-    
-  }
-  
-  .nav-link:hover {
-    background-color: #555; /* Color de fondo al pasar el mouse */
-  }
-  
+}
+
+.nav-link:hover {
+  background-color: #555; /* Color de fondo al pasar el mouse */
+}
 
 
-  /* AREA DE COMNADO  */
-  .command-console-container {
-    position: absolute;
-    top: 15%;
-    left: 32%;
-    transform: translate(-50%, -50%);
-    height: 50px;
 
-  }
+/* AREA DE COMNADO  */
+.command-console-container {
+  position: absolute;
+  top: 15%;
+  left: 32%;
+  transform: translate(-50%, -50%);
+  height: 50px;
+
+}
+
+.command-console {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  width: 350%;
+  height: 1350%;
+}
+
+.output-area {
+  width: 100%;
+  font-size: 13px;
+}
+
+.input-area {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
   
-  .command-console {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 5px;
-    width: 350%;
-    height: 1350%;
-  }
-  
-  .output-area {
-    width: 100%;
-  }
-  
-  .input-area {
-    width: 100%;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    
-  }
-  
+}
+
+
+/*DISEÑO DE LOGIN*/
+
+.sign-in-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.sign-in-form {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  max-width: 80%;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-header h2 {
+  margin: 0;
+  font-size: 32px;
+  color: #333333;
+}
+
+.form-header p {
+  margin: 10px 0 0;
+  font-size: 16px;
+  color: #666666;
+}
+
+.form-inputs {
+  margin-bottom: 30px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555555;
+  font-size: 18px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.form-actions {
+  text-align: center;
+}
+
+.form-actions button {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 16px 24px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-actions button:hover {
+  background-color: #0056b3;
+}
+
+.form-actions a {
+  margin-left: 16px;
+  color: #007bff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.form-actions a:hover {
+  text-decoration: underline;
+}

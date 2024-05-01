@@ -9,11 +9,11 @@ export default function VerticalNav() {
           <Link to="/" className="nav-link">Pantalla1</Link>
         </li>
         <li className="nav-item">
-          <Link to="DiskCreen" className="nav-link">Pantalla2</Link>
+          <Link to="/DiskCreen" className="nav-link">Pantalla2</Link>
         </li>
 
         <li className="nav-item">
-          <Link to="/disk/:id/" className="nav-link">Pantalla3</Link>
+          <Link to="/Reports" className="nav-link">Pantalla3</Link>
         </li>
         {/* Agrega más elementos de lista y enlaces según sea necesario */}
       </ul>

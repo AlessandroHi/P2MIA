@@ -6,6 +6,7 @@ import Home from '../pages/Home/Home'
 import Commands from '../pages/DiskCreen/DiskCreen'
 import Partition from '../pages/Partition/Partition'
 import SingIn from '../pages/SingIn/SingIn'
+import Reports from '../pages/Reports/Reports'
 
 export default function AppNavigator() {
   const [ip, setIP] = useState("localhost") 
@@ -21,8 +22,10 @@ export default function AppNavigator() {
       <Routes>
          
           <Route path="/" element={<Home/>} />
-          
           <Route path="/DiskCreen" element={<Commands ip={ip}/>} />
+          <Route path="/Reports" element={<Reports/>} />
+
+
           <Route path="/disk/:id/" element={<Partition ip={ip}/>} />
           <Route path="/login/:disk/:part" element={<SingIn ip={ip}/>} />
 
